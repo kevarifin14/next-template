@@ -35,18 +35,21 @@ function App({ Component, pageProps }) {
     openGraph: {
       title,
       description,
+
     },
   };
 
   const getLayout = Component.getLayout || ((page) => page);
 
   return (
-    <WalletConnectionProvider>
-      <WalletsProvider>
-        <DefaultSeo {...seoProps} />
-        {getLayout(<Component {...pageProps} />)}
-      </WalletsProvider>
-    </WalletConnectionProvider>
+    <>
+      <DefaultSeo {...seoProps} />
+      <WalletConnectionProvider>
+        <WalletsProvider>
+          {getLayout(<Component {...pageProps} />)}
+        </WalletsProvider>
+      </WalletConnectionProvider>
+    </>
   );
 }
 
