@@ -40,9 +40,6 @@ module.exports = {
     'react/prop-types': 0,
     'react/require-default-props': 0,
 
-    // https://stackoverflow.com/questions/63767199/typescript-eslint-no-unused-vars-false-positive-in-type-declarations
-    'no-unused-vars': 0,
-
     // https://github.com/yannickcr/eslint-plugin-react/issues/1555#issuecomment-377339656
     'react/button-has-type': 0,
 
