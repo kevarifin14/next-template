@@ -1,29 +1,12 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/solid';
-import {
-  Fragment, ReactNode, useEffect, useState,
-} from 'react';
+import { useState, Fragment, ReactNode } from 'react';
 import * as ReactDOM from 'react-dom';
 
-import ConfirmModal, { ConfirmModalProps } from './ConfirmModal';
+import Alert from 'components/Alert';
+import Button from 'components/Button';
+
 import Overlay from './Overlay';
-
-export const confirm = (confirmModalProps: Omit<ConfirmModalProps, 'onCancel'>) => {
-  const div = document.createElement('div');
-  document.body.appendChild(div);
-
-  const destroy = () => {
-    const unmountResult = ReactDOM.unmountComponentAtNode(div);
-    if (unmountResult && div.parentNode) {
-      div.parentNode.removeChild(div);
-    }
-  };
-
-  ReactDOM.render(
-    <ConfirmModal {...confirmModalProps} onCancel={destroy} />,
-    div,
-  );
-};
 
 export type ModalProps = {
   open: boolean,
@@ -91,3 +74,59 @@ export default function Modal({
     </Transition.Root>
   );
 }
+
+export type ConfirmModalProps = {
+  title: string,
+  onOk: () => void,
+  onCancel: () => void,
+  okText?: string,
+  cancelText?: string,
+};
+
+export function ConfirmModal({
+  title, onOk, onCancel, okText = 'Ok', cancelText = 'Cancel',
+}: ConfirmModalProps) {
+  const [loading, setLoading] = useState(false);
+
+  const handleOk = async () => {
+    setLoading(true);
+    await onOk();
+    setLoading(false);
+    onCancel();
+  };
+
+  return (
+    <Modal closable={false} open>
+
+      <Alert title={title} type="warning" />
+
+      <div className="grid grid-cols-2 space-x-2">
+        <Button type="secondary" onClick={onCancel}>
+          {cancelText}
+        </Button>
+
+        <Button type="primary" onClick={handleOk} loading={loading}>
+          {okText}
+        </Button>
+      </div>
+
+    </Modal>
+  );
+}
+
+export const confirm = (confirmModalProps: Omit<ConfirmModalProps, 'onCancel'>) => {
+  const div = document.createElement('div');
+  document.body.appendChild(div);
+
+  const destroy = () => {
+    const unmountResult = ReactDOM.unmountComponentAtNode(div);
+    if (unmountResult && div.parentNode) {
+      div.parentNode.removeChild(div);
+    }
+  };
+
+  ReactDOM.render(
+    <ConfirmModal {...confirmModalProps} onCancel={destroy} />,
+    div,
+  );
+};

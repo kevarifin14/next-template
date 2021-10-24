@@ -4,7 +4,7 @@ type AvatarProps = {
   src: string,
   size?: TailwindSize,
   className?: string,
-}
+};
 
 export default function Avatar({ src, size = 'md', className }: AvatarProps) {
   const dimension = sizeToDimension[size];

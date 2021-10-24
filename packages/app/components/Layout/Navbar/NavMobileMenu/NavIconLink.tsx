@@ -4,7 +4,7 @@ type NavIconLinkProps = {
   href: string,
   title: string,
   icon?: any,
-}
+};
 
 export default function NavIconLink({ href, title, icon }: NavIconLinkProps) {
   return (

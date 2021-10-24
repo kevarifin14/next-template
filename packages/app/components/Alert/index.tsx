@@ -1,5 +1,3 @@
-import { ExclamationIcon } from '@heroicons/react/solid';
-
 import { alertColors, IAlert } from 'utils/tailwind';
 
 type AlertProps = {

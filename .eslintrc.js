@@ -5,11 +5,11 @@ module.exports = {
     jest: true,
   },
   extends: [
-    'plugin:react/recommended',
     'airbnb',
+    'airbnb-typescript',
   ],
-  parser: '@typescript-eslint/parser',
   parserOptions: {
+    project: './tsconfig.json',
     ecmaFeatures: {
       jsx: true,
     },
@@ -38,6 +38,7 @@ module.exports = {
 
     // https://stackoverflow.com/questions/63696724/eslint-problem-with-default-props-in-functional-component-typescript-react
     'react/prop-types': 0,
+
     'react/require-default-props': 0,
 
     // https://github.com/yannickcr/eslint-plugin-react/issues/1555#issuecomment-377339656
@@ -68,7 +69,7 @@ module.exports = {
     'import/resolver': {
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        paths: ['.'],
+        paths: ['./packages/app'],
       },
     },
   },

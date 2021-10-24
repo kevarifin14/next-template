@@ -7,7 +7,7 @@ import { classNames } from 'utils/tailwind';
 type WalletMenuItemProps = {
   wallet: Wallet,
   onClick: (wallet: Wallet) => void,
-}
+};
 
 export default function WalletMenuItem({ wallet, onClick }: WalletMenuItemProps) {
   return (

@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Index Page matches snapshot 1`] = `
-<div
-  className="mx-auto max-w-sm w-full"
-/>
-`;

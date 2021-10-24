@@ -6,7 +6,7 @@ import WalletMenuItem from './WalletMenuItem';
 
 type WalletMenuProps = {
   onClick: (wallet: Wallet) => void,
-}
+};
 
 export default function WalletsMenu({ onClick }: WalletMenuProps) {
   const { wallets } = useWallet();

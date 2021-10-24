@@ -7,7 +7,7 @@ export type MediaObjectProps = {
   description?: string,
   size?: TailwindSize,
   className?: string,
-}
+};
 
 export default function MediaObject({
   title, src, description, size, className,

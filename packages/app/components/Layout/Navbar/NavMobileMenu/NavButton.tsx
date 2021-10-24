@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 type NavButtonProps = {
   children: ReactNode,
   onClick: () => void,
-}
+};
 
 export default function NavButton({ onClick, children }: NavButtonProps) {
   return (
