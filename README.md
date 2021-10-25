@@ -1,3 +1,13 @@
+# Getting Start
+
+
+
+Start local postgres instance
+```
+docker compose up
+```
+
+
 ## ESLint
 
 ## [Add a new package](https://github.com/lerna/lerna/tree/main/commands/create#readme)

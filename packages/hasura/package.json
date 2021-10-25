@@ -1,0 +1,7 @@
+{
+  "name": "hasura",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "hasura console --no-browser"
+  }
+}

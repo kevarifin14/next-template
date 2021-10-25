@@ -1,5 +1,5 @@
-import * as heroicons from '@heroicons/react/solid';
 import React from 'react';
+import * as heroicons from 'react-icons/hi';
 
 import {
   classNames, Heroicon, sizeToClassName, TailwindSize,
@@ -16,20 +16,20 @@ export default function Icon({ size = 'xs', className, ...props }: IconProps) {
 
   const getDefaultColorClassName = (icon: Heroicon) => {
     switch (icon) {
-      case heroicons.CheckCircleIcon:
+      case heroicons.HiCheckCircle:
         return 'text-green-500';
 
-      case heroicons.ExclamationCircleIcon:
+      case heroicons.HiExclamationCircle:
         return 'text-yellow-500';
 
-      case heroicons.XCircleIcon:
+      case heroicons.HiXCircle:
         return 'text-red-500';
 
-      case heroicons.InformationCircleIcon:
+      case heroicons.HiInformationCircle:
         return 'text-yellow-500';
 
-      case heroicons.ExternalLinkIcon:
-      case heroicons.ArrowsExpandIcon:
+      case heroicons.HiExternalLink:
+      case heroicons.HiArrowsExpand:
         return 'text-gray-500';
 
       default:
@@ -50,13 +50,13 @@ export default function Icon({ size = 'xs', className, ...props }: IconProps) {
   );
 }
 
-export const CheckCircleIcon = (props: Omit<IconProps, 'icon'>) => <Icon icon={heroicons.CheckCircleIcon} {...props} />;
-export const ExclamationCircleIcon = (props: Omit<IconProps, 'icon'>) => <Icon icon={heroicons.ExclamationCircleIcon} {...props} />;
-export const XCircleIcon = (props: Omit<IconProps, 'icon'>) => <Icon icon={heroicons.XCircleIcon} {...props} />;
-export const ExternalLinkIcon = (props: Omit<IconProps, 'icon'>) => <Icon icon={heroicons.ExternalLinkIcon} {...props} />;
-export const PlusIcon = (props: Omit<IconProps, 'icon'>) => <Icon icon={heroicons.PlusIcon} {...props} />;
-export const ArrowsExpandIcon = (props: Omit<IconProps, 'icon'>) => <Icon icon={heroicons.ArrowsExpandIcon} {...props} />;
-export const InformationCircleIcon = (props: Omit<IconProps, 'icon'>) => <Icon icon={heroicons.InformationCircleIcon} {...props} />;
+export const CheckCircleIcon = (props: Omit<IconProps, 'icon'>) => <Icon icon={heroicons.HiCheckCircle} {...props} />;
+export const ExclamationCircleIcon = (props: Omit<IconProps, 'icon'>) => <Icon icon={heroicons.HiExclamationCircle} {...props} />;
+export const XCircleIcon = (props: Omit<IconProps, 'icon'>) => <Icon icon={heroicons.HiXCircle} {...props} />;
+export const ExternalLinkIcon = (props: Omit<IconProps, 'icon'>) => <Icon icon={heroicons.HiExternalLink} {...props} />;
+export const PlusIcon = (props: Omit<IconProps, 'icon'>) => <Icon icon={heroicons.HiPlus} {...props} />;
+export const ArrowsExpandIcon = (props: Omit<IconProps, 'icon'>) => <Icon icon={heroicons.HiArrowsExpand} {...props} />;
+export const InformationCircleIcon = (props: Omit<IconProps, 'icon'>) => <Icon icon={heroicons.HiInformationCircle} {...props} />;
 
 export const alertTypeToIcon = {
   success: CheckCircleIcon,

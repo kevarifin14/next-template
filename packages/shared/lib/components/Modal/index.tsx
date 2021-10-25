@@ -1,6 +1,6 @@
 import { Dialog, Transition } from '@headlessui/react';
-import { XIcon } from '@heroicons/react/solid';
 import React, { Fragment, ReactNode } from 'react';
+import { HiX } from 'react-icons/hi';
 // import * as ReactDOM from 'react-dom';
 
 // import { Alert } from '../../components/Alert';
@@ -10,7 +10,7 @@ import Overlay from './Overlay';
 
 export type ModalProps = {
   open: boolean,
-  children: ReactNode,
+  children?: ReactNode,
   onClose?: () => void,
   title?: string,
   closable?: boolean
@@ -56,7 +56,7 @@ export function Modal({
                     onClick={handleClose}
                     className="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none"
                   >
-                    <XIcon className="h-6 w-6" aria-hidden="true" />
+                    <HiX className="h-6 w-6" aria-hidden="true" />
                   </button>
 
                 </div>
