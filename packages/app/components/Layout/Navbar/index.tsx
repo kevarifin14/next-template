@@ -1,8 +1,8 @@
 import { BookOpenIcon, UserIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { Button } from 'shared';
 
-import Button from 'components/Button';
 import LogoImage from 'components/LogoImage';
 
 import NavLink from './NavLink';

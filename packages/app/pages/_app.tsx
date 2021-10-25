@@ -3,9 +3,9 @@ import { DefaultSeo } from 'next-seo';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import { pageview } from 'shared';
 
 import WalletsProvider from 'contexts/wallets';
-import { pageview } from 'utils/ga';
 
 const WalletConnectionProvider = dynamic(() => import('contexts/walletConnection'), {
   ssr: false,
@@ -44,11 +44,13 @@ function App({ Component, pageProps }) {
   return (
     <>
       <DefaultSeo {...seoProps} />
+
       <WalletConnectionProvider>
         <WalletsProvider>
           {getLayout(<Component {...pageProps} />)}
         </WalletsProvider>
       </WalletConnectionProvider>
+
     </>
   );
 }

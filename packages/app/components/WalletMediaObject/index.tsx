@@ -1,6 +1,5 @@
 import { Wallet } from '@solana/wallet-adapter-wallets';
-
-import MediaObject, { MediaObjectProps } from 'components/MediaObject';
+import { MediaObject, MediaObjectProps } from 'shared';
 
 type WalletMediaObjectProps = Omit<MediaObjectProps, 'title'> & {
   wallet: Wallet

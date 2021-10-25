@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MediaObject matches snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="flex items-center space-x-2"
+    >
+      <div
+        class="flex-shrink-0"
+      >
+        <div
+          class="relative rounded-full overflow-hidden flex items-center text-md h-10 w-10"
+        >
+          <img
+            alt="mockSrc"
+            src="mockSrc"
+          />
+        </div>
+      </div>
+      <div
+        class="flex flex-col justify-center overflow-hidden"
+      >
+        <p
+          class="font-medium text-undefined truncate"
+        >
+          mockTitle
+        </p>
+        <p
+          class="text-xs truncate"
+        />
+      </div>
+    </div>
+  </div>
+</body>
+`;

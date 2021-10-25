@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal matches snapshot 1`] = `
+<body>
+  <div />
+  <div
+    id="headlessui-portal-root"
+  >
+    <div>
+      <div
+        aria-modal="true"
+        class="fixed z-10 inset-0 overflow-y-auto"
+        id="headlessui-dialog-1"
+        role="dialog"
+      >
+        <div
+          class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
+        >
+          <div
+            aria-hidden="true"
+            class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+            id="headlessui-dialog-overlay-4"
+          />
+          <span
+            aria-hidden="true"
+            class="hidden sm:inline-block sm:align-middle sm:h-screen"
+          >
+            ​
+          </span>
+          <div
+            class="inline-block align-bottom bg-white rounded-lg p-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full"
+          >
+            <div
+              class="flex justify-between"
+            >
+              <h1 />
+              <button
+                class="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none"
+                tabindex="0"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="h-6 w-6"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="py-4"
+            >
+              mockChildren
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

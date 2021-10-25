@@ -1,5 +1,7 @@
-import Avatar from 'components/Avatar';
-import { classNames, TailwindSize } from 'utils/tailwind';
+import React from 'react';
+
+import { classNames, TailwindSize } from '../../utils/tailwind';
+import { Avatar } from '../Avatar';
 
 export type MediaObjectProps = {
   title: string,
@@ -9,7 +11,7 @@ export type MediaObjectProps = {
   className?: string,
 };
 
-export default function MediaObject({
+export function MediaObject({
   title, src, description, size, className,
 }: MediaObjectProps) {
   return (

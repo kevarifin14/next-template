@@ -1,8 +1,8 @@
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import { getPhantomWallet, getSolletWallet } from '@solana/wallet-adapter-wallets';
-import { FC, useMemo } from 'react';
+import { useMemo } from 'react';
 
-const WalletConnectionProvider: FC = ({ children }) => {
+export default function WalletConnectionProvider({ children }) {
   const wallets = useMemo(() => [
     getPhantomWallet(),
     getSolletWallet(),
@@ -15,6 +15,4 @@ const WalletConnectionProvider: FC = ({ children }) => {
       </WalletProvider>
     </ConnectionProvider>
   );
-};
-
-export default WalletConnectionProvider;
+}

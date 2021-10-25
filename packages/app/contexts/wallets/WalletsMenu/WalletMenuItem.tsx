@@ -1,8 +1,8 @@
 import { Menu } from '@headlessui/react';
 import { Wallet } from '@solana/wallet-adapter-wallets';
+import { classNames } from 'shared';
 
 import WalletMediaObject from 'components/WalletMediaObject';
-import { classNames } from 'utils/tailwind';
 
 type WalletMenuItemProps = {
   wallet: Wallet,

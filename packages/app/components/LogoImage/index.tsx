@@ -1,4 +1,4 @@
-import { classNames } from 'utils/tailwind';
+import { classNames } from 'shared';
 
 type LogoImageProps = {
   className?: string,

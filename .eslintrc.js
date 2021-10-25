@@ -34,7 +34,13 @@ module.exports = {
     'react/jsx-props-no-spreading': 0,
 
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
-    'import/no-extraneous-dependencies': ['error', { devDependencies: ['__tests__/**/*'] }],
+    'import/no-extraneous-dependencies': [
+      'error', 
+      { 
+        devDependencies: ['**/test.tsx'], 
+        packageDir: ['.', './packages/app', './packages/shared'],
+      },
+    ],
 
     // https://stackoverflow.com/questions/63696724/eslint-problem-with-default-props-in-functional-component-typescript-react
     'react/prop-types': 0,
@@ -64,6 +70,8 @@ module.exports = {
         },
       },
     ],
+
+    'import/prefer-default-export': 0,
   },
   settings: {
     'import/resolver': {

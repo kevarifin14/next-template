@@ -2,8 +2,8 @@ import { Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { Button } from 'shared';
 
-import Button from 'components/Button';
 import LogoImage from 'components/LogoImage';
 
 import NavButton from './NavButton';

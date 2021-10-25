@@ -1,20 +1,23 @@
-import { alertColors, IAlert } from 'utils/tailwind';
+import React from 'react';
+
+import { AlertType } from '../../utils/tailwind';
+import { alertTypeToIcon } from '../Icon';
 
 type AlertProps = {
   title: string,
   description?: string,
-  type?: IAlert,
+  type?: AlertType,
 };
 
-export default function Alert({ title, description, type = 'info' }: AlertProps) {
-  const { icon } = alertColors(type);
+export function Alert({ title, description, type = 'info' }: AlertProps) {
+  const icon = alertTypeToIcon[type];
 
   return (
     <div className="p-4">
       <div className="flex">
 
         <div className="flex-shrink-0 flex items-center">
-          {icon}
+          {icon({})}
         </div>
 
         <div className="ml-3">
@@ -22,11 +25,9 @@ export default function Alert({ title, description, type = 'info' }: AlertProps)
           <h3 className="font-medium">{title}</h3>
 
           {description && (
-            <div className="mt-2">
-              <p>
-                {description}
-              </p>
-            </div>
+            <p className="mt-2">
+              {description}
+            </p>
           )}
 
         </div>

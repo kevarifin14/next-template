@@ -1,3 +1,5 @@
+## ESLint
+
 ## [Add a new package](https://github.com/lerna/lerna/tree/main/commands/create#readme)
 
 ```
@@ -37,3 +39,19 @@ This runs the build command but specifies which packages to build. In this examp
 ```
 npm run build -- --scope='{app,shared'}
 ```
+
+## Create a New Package
+
+```
+npm run create -- <your-package-name>
+```
+
+## Clean Your Local Directory
+
+If you want a clean directory with no dependencies installed or linked:
+
+```
+npm run clean
+```
+
+This will remove all `node_modules` and `package-lock.json` files in the root and subpackages. You'll have to run `npm run bootstrap` again to develop locally again. 
