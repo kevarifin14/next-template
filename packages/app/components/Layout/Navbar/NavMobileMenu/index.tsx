@@ -1,7 +1,7 @@
 import { Transition } from '@headlessui/react';
-import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { HiMenu, HiX } from 'react-icons/hi';
 import { Button } from 'shared';
 
 import LogoImage from 'components/LogoImage';
@@ -18,7 +18,7 @@ export default function NavMobileMenu({ links }) {
 
       <div className="md:hidden">
         <NavButton onClick={() => setIsOpen(true)}>
-          <MenuIcon className="h-6 w-6" />
+          <HiMenu className="h-6 w-6" />
         </NavButton>
       </div>
 
@@ -42,7 +42,7 @@ export default function NavMobileMenu({ links }) {
 
               <div className="-mr-2">
                 <NavButton onClick={() => setIsOpen(false)}>
-                  <XIcon className="h-6 w-6" />
+                  <HiX className="h-6 w-6" />
                 </NavButton>
               </div>
 

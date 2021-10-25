@@ -1,6 +1,6 @@
-import { BookOpenIcon, UserIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { HiBookOpen, HiUser } from 'react-icons/hi';
 import { Button } from 'shared';
 
 import LogoImage from 'components/LogoImage';
@@ -14,12 +14,12 @@ export default function Navbar() {
   const links = [
     {
       href: '/docs',
-      icon: BookOpenIcon,
+      icon: HiBookOpen,
       title: 'Documentation',
     },
     {
       href: '/signin',
-      icon: UserIcon,
+      icon: HiUser,
       title: 'Sign In',
     },
   ];
