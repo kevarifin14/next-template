@@ -1,0 +1,16 @@
+{
+  "name": "generated",
+  "version": "0.0.0",
+  "author": "Kevin Arifin <kevarifin14@gmail.com>",
+  "source": "generated/types.tsx",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "graphql-codegen --config codegen.yml; microbundle --jsx React.createElement",
+    "build": "npm run generate",
+    "generate": "graphql-codegen --config codegen.yml"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.4.16",
+    "graphql": "^15.6.1"
+  }
+}

@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 
-import Input from '.';
+import { Input } from '.';
 import { errorTypeToMessage } from '../../utils/forms';
 
 describe('Input', () => {

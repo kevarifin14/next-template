@@ -11,7 +11,7 @@ export interface InputProps extends Omit<HTMLProps<HTMLInputElement>, 'size'> {
   error?: ErrorOption,
 }
 
-const Input = forwardRef<HTMLInputElement, InputProps>(({
+export const Input = forwardRef<HTMLInputElement, InputProps>(({
   size = 'md', label, error, ...inputProps
 }, ref) => {
   let sizeClassName;
@@ -77,5 +77,3 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
     </div>
   );
 });
-
-export default Input;

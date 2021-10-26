@@ -15,13 +15,21 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:updateSnapshot": "jest --updateSnapshot",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage && :",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "@headlessui/react": "^1.4.1",
+    "query-string": "^7.0.1",
     "react": "^17.0.2",
     "react-hook-form": "^7.17.5",
     "react-icons": "^4.3.1",
     "uuid": "^8.3.2"
+  },
+  "lint-staged": {
+    "**/*.[jt]s?(x)": [
+      "eslint --fix",
+      "npm run test:coverage"
+    ]
   }
 }

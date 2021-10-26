@@ -1,24 +1,3 @@
-const { loadEnvConfig } = require('@next/env');
+const base = require("../../base.jest.config.js");
 
-loadEnvConfig(process.env.PWD);
-
-module.exports = {
- collectCoverageFrom: [
-    '**/*.{js,jsx,ts,tsx}',
-    '!*.js',
-    '!**/coverage/**',
-    '!**/dist/**',
-    '!**/lib/index.ts',
-  ],
-  coverageThreshold: {
-    global: {
-      branches: 100,
-      functions: 100,
-      lines: 100,
-      statements: 100,
-    },
-  },
-  setupFilesAfterEnv: [
-    "./setupTest.js"
-  ]
-};
+module.exports = base;

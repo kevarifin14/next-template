@@ -22,4 +22,9 @@ describe('MediaObject', () => {
     render(<MediaObject src={mockSrc} title={mockTitle} size="2xl" />);
     expect(avatarSpy).toHaveBeenCalled();
   });
+
+  it('renders Avatar', () => {
+    const { container } = render(<MediaObject src={mockSrc} title={mockTitle} dark />);
+    expect(container.getElementsByClassName('text-white')).toBeTruthy();
+  });
 });

@@ -1,7 +1,8 @@
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, act } from '@testing-library/react';
 import React from 'react';
 
-import { Modal } from '.';
+import { ConfirmModal, Modal } from '.';
+import { AppearanceProvider } from '../..';
 
 describe('Modal', () => {
   const mockChildren = 'mockChildren';
@@ -45,5 +46,45 @@ describe('Modal', () => {
   it('hides close button when not closable', () => {
     const { queryByRole } = render(<Modal open closable={false}>{mockChildren}</Modal>);
     expect(queryByRole('button')).toBeNull();
+  });
+
+  it('adds dark class', () => {
+    const { container } = render(
+      <AppearanceProvider dark>
+        <Modal open>{mockChildren}</Modal>
+      </AppearanceProvider>,
+    );
+    expect(container.firstChild).toHaveClass('dark');
+  });
+});
+
+describe('ConfirmModal', () => {
+  it('matches snapshot', () => {
+    const { baseElement } = render(<ConfirmModal title="" onOk={() => {}} />);
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('fires onOk function', async () => {
+    const mockOnOk = jest.fn();
+    const { getByRole } = render(<ConfirmModal title="" onOk={mockOnOk} />);
+
+    const okButton = getByRole('button', { name: 'Ok' });
+
+    await act(async () => {
+      fireEvent.click(okButton);
+    });
+
+    expect(mockOnOk).toHaveBeenCalledTimes(1);
+  });
+
+  it('onCancel closes modal', async () => {
+    const mockOnOk = jest.fn();
+    const { getByRole } = render(<ConfirmModal title="confirm modal" onOk={mockOnOk} />);
+
+    const cancelButton = getByRole('button', { name: 'Cancel' });
+
+    await act(async () => {
+      fireEvent.click(cancelButton);
+    });
   });
 });

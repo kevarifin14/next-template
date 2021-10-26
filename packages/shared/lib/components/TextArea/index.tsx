@@ -9,7 +9,7 @@ export interface TextAreaProps extends HTMLProps<HTMLTextAreaElement> {
   error?: ErrorOption,
 }
 
-const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>((
+export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>((
   props: TextAreaProps,
   ref,
 ) => {
@@ -49,5 +49,3 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>((
     </div>
   );
 });
-
-export default TextArea;

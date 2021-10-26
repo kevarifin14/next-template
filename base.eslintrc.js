@@ -9,7 +9,7 @@ module.exports = {
     'airbnb-typescript',
   ],
   parserOptions: {
-    project: './tsconfig.json',
+    project: 'tsconfig.json',
     ecmaFeatures: {
       jsx: true,
     },
@@ -20,6 +20,7 @@ module.exports = {
     'react',
     '@typescript-eslint',
   ],
+  ignorePatterns: ['*.js'],
   rules: {
     // https://stackoverflow.com/questions/42640636/react-must-be-in-scope-when-using-jsx-react-react-in-jsx-scope
     'react/react-in-jsx-scope': 0,
@@ -37,8 +38,8 @@ module.exports = {
     'import/no-extraneous-dependencies': [
       'error', 
       { 
-        devDependencies: ['**/test.tsx'], 
-        packageDir: ['.', './packages/app', './packages/shared'],
+        devDependencies: ['__tests__/**', '**/test.tsx'], 
+        packageDir: ['../..', '.']
       },
     ],
 
@@ -77,7 +78,7 @@ module.exports = {
     'import/resolver': {
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        paths: ['./packages/app'],
+        paths: ['.'],
       },
     },
   },

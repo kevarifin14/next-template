@@ -1,6 +1,6 @@
 import { Menu } from '@headlessui/react';
 import { Wallet } from '@solana/wallet-adapter-wallets';
-import { classNames } from 'shared';
+import { classNames, useAppearanceContext } from 'shared';
 
 import WalletMediaObject from 'components/WalletMediaObject';
 
@@ -10,6 +10,8 @@ type WalletMenuItemProps = {
 };
 
 export default function WalletMenuItem({ wallet, onClick }: WalletMenuItemProps) {
+  const { dark } = useAppearanceContext();
+
   return (
     <Menu.Item>
       {({ active }) => (
@@ -17,10 +19,10 @@ export default function WalletMenuItem({ wallet, onClick }: WalletMenuItemProps)
           onClick={() => onClick(wallet)}
           className={classNames(
             'rounded-md flex space-x-2 w-full p-4',
-            active ? 'bg-primary-400 text-white' : '',
+            active ? 'bg-primary-200 dark:bg-primary-800' : '',
           )}
         >
-          <WalletMediaObject wallet={wallet} />
+          <WalletMediaObject wallet={wallet} dark={dark} />
         </button>
       )}
     </Menu.Item>

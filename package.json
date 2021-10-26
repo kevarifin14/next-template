@@ -14,11 +14,15 @@
     "test:updateSnapshot": "lerna run test:updateSnapshot",
     "create": "lerna create",
     "add": "lerna add",
-    "clean": "lerna clean; rm -rf */**/package-lock.json */**/dist; rm -rf node_modules package-lock.json;",
-    "lint-staged": "lint-staged",
-    "prepare": "husky install"
+    "clean": "lerna clean; rm -rf */**/package-lock.json */**/dist */**/.next; rm -rf node_modules package-lock.json;",
+    "prepare": "husky install",
+    "lint-staged": "lerna run lint-staged --stream --concurrency 1"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^2.2.1",
+    "@graphql-codegen/typescript": "^2.2.4",
+    "@graphql-codegen/typescript-operations": "^2.1.8",
+    "@graphql-codegen/typescript-react-apollo": "^3.1.6",
     "@testing-library/dom": "^8.10.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.2",
@@ -37,7 +41,7 @@
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "hasura-cli": "^2.0.9",
-    "husky": "^6.0.0",
+    "husky": "^7.0.0",
     "jest": "^26.6.3",
     "lerna": "^4.0.0",
     "lint-staged": "^11.0.0",
@@ -47,13 +51,10 @@
     "tailwindcss": "^2.1.2",
     "typescript": "^4.2.4"
   },
-  "lint-staged": {
-    "**/*.[jt]s?(x)": [
-      "eslint --fix"
-    ]
-  },
   "dependencies": {
-    "next-template-app": "file:packages/app",
+    "app": "file:packages/app",
+    "generated": "file:packages/generated",
+    "marketing": "file:packages/marketing",
     "shared": "file:packages/shared"
   }
 }

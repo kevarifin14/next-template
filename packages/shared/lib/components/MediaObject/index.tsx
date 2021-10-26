@@ -9,22 +9,25 @@ export type MediaObjectProps = {
   description?: string,
   size?: TailwindSize,
   className?: string,
+  dark?: boolean,
 };
 
 export function MediaObject({
-  title, src, description, size, className,
+  title, src, description, size, className, dark,
 }: MediaObjectProps) {
+  const textClassName = dark ? 'text-white' : 'text-black';
+
   return (
     <div className={classNames('flex items-center space-x-2', className)}>
       <div className="flex-shrink-0">
         <Avatar size={size} src={src} />
       </div>
 
-      <div className="flex flex-col justify-center overflow-hidden">
-        <p className={`font-medium text-${size} truncate`}>
+      <div className={classNames('flex flex-col justify-center overflow-hidden', textClassName)}>
+        <p className={`font-medium text-${size} truncate m-0`}>
           {title}
         </p>
-        <p className="text-xs truncate">
+        <p className="text-xs truncate m-0">
           {description}
         </p>
       </div>

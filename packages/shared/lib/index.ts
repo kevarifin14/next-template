@@ -13,3 +13,4 @@ export * from './contexts/notifications';
 
 export * from './utils/tailwind';
 export * from './utils/ga';
+export * from './utils/http';

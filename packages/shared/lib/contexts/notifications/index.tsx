@@ -6,7 +6,7 @@ import { IconType } from 'react-icons';
 import { HiX } from 'react-icons/hi';
 import { v4 as uuid } from 'uuid';
 
-import { CheckCircleIcon, ExclamationCircleIcon } from '../../components/Icon';
+import { CheckCircleIcon, XCircleIcon } from '../../components/Icon';
 
 export interface INotification {
   id: string,
@@ -112,7 +112,7 @@ export function NotificationsProvider({ children }) {
       ...prevNotifications,
       {
         ...notification,
-        icon: ExclamationCircleIcon,
+        icon: XCircleIcon,
         id: uuid(),
       },
     ]);

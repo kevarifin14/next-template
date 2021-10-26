@@ -3,6 +3,7 @@ import { HiMoon, HiSun } from 'react-icons/hi';
 import { useAppearanceContext } from 'shared';
 
 import LogoImage from 'components/LogoImage';
+import WalletButton from 'components/WalletButton';
 
 import NavLink from './NavLink';
 import NavMobileMenu from './NavMobileMenu';
@@ -35,6 +36,8 @@ export default function Navbar() {
           >
             {dark ? <HiSun className="h-6 w-6" /> : <HiMoon className="h-6 w-6" />}
           </button>
+
+          <WalletButton />
 
         </div>
 

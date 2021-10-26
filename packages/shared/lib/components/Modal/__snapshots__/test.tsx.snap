@@ -1,5 +1,95 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ConfirmModal matches snapshot 1`] = `
+<body>
+  <div />
+  <div
+    id="headlessui-portal-root"
+  >
+    <div>
+      <div
+        aria-modal="true"
+        class="fixed z-10 inset-0 overflow-y-auto flex items-center justify-center min-h-screen"
+        id="headlessui-dialog-32"
+        role="dialog"
+      >
+        <div
+          aria-hidden="true"
+          class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+          id="headlessui-dialog-overlay-34"
+        />
+        <span
+          aria-hidden="true"
+          class="hidden sm:inline-block sm:align-middle sm:h-screen"
+        >
+          ​
+        </span>
+        <div
+          class="bg-light dark:bg-dark rounded-lg p-4 overflow-hidden transform transition-all max-w-sm w-full"
+        >
+          <div
+            class="py-4"
+          >
+            <div
+              class="p-4"
+            >
+              <div
+                class="flex"
+              >
+                <div
+                  class="flex-shrink-0 flex items-center"
+                >
+                  <svg
+                    class="text-yellow-500 h-6 w-6"
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 20 20"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="ml-3"
+                >
+                  <h3
+                    class="font-medium"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-2 space-x-2"
+            >
+              <button
+                class="inline-flex items-center justify-center focus:outline-none font-medium rounded-md  dark:text-primary dark:bg-transparent dark:border-primary text-primary-dark bg-primary-100 border-primary-100 hover:bg-primary-200 hover:border-primary-200 border   px-4 py-2 "
+                tabindex="0"
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                class="inline-flex items-center justify-center focus:outline-none font-medium rounded-md text-white bg-primary border-primary hover:bg-primary-dark hover:border-primary-dark border    px-4 py-2 "
+                type="button"
+              >
+                Ok
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`Modal matches snapshot 1`] = `
 <body>
   <div />
@@ -9,59 +99,55 @@ exports[`Modal matches snapshot 1`] = `
     <div>
       <div
         aria-modal="true"
-        class="fixed z-10 inset-0 overflow-y-auto"
+        class="fixed z-10 inset-0 overflow-y-auto flex items-center justify-center min-h-screen"
         id="headlessui-dialog-1"
         role="dialog"
       >
         <div
-          class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
+          aria-hidden="true"
+          class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+          id="headlessui-dialog-overlay-4"
+        />
+        <span
+          aria-hidden="true"
+          class="hidden sm:inline-block sm:align-middle sm:h-screen"
+        >
+          ​
+        </span>
+        <div
+          class="bg-light dark:bg-dark rounded-lg p-4 overflow-hidden transform transition-all max-w-sm w-full"
         >
           <div
-            aria-hidden="true"
-            class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
-            id="headlessui-dialog-overlay-4"
-          />
-          <span
-            aria-hidden="true"
-            class="hidden sm:inline-block sm:align-middle sm:h-screen"
+            class="flex justify-between"
           >
-            ​
-          </span>
-          <div
-            class="inline-block align-bottom bg-white rounded-lg p-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full"
-          >
-            <div
-              class="flex justify-between"
+            <h1 />
+            <button
+              class="rounded-md text-gray-400 hover:text-gray-500 focus:outline-none"
+              tabindex="0"
             >
-              <h1 />
-              <button
-                class="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none"
-                tabindex="0"
+              <svg
+                aria-hidden="true"
+                class="h-6 w-6"
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 20 20"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  aria-hidden="true"
-                  class="h-6 w-6"
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 20 20"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    clip-rule="evenodd"
-                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div
-              class="py-4"
-            >
-              mockChildren
-            </div>
+                <path
+                  clip-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="py-4"
+          >
+            mockChildren
           </div>
         </div>
       </div>

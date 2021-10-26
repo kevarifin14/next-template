@@ -6,10 +6,14 @@ exports[`Apprearance Context matches snapshot 1`] = `
     <div
       class="dark"
     >
-      <button>
-        Toggle Dark Mode
-      </button>
-      dark
+      <div
+        class="transform transition-colors h-full bg-light dark:bg-dark"
+      >
+        <button>
+          Toggle Dark Mode
+        </button>
+        dark
+      </div>
     </div>
   </div>
 </body>
