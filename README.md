@@ -67,6 +67,10 @@ lerna create <your-package-name>
 
 # How To
 
+## Deploy
+
+1. Head to [https://vercel.com/new](https://vercel.com/new)
+
 ## Install Dependencies
 
 ```

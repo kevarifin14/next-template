@@ -20,7 +20,7 @@ const primary = {
 };
 
 module.exports = {
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}'],
+  // purge: ['./pages/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
   theme: {
     extend: {
