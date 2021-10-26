@@ -8,6 +8,7 @@
     "start": "lerna run start --parallel",
     "build": "npm run bootstrap; lerna run build --stream",
     "build:app": "npm run build -- --scope='{app,shared}'",
+    "build:marketing": "npm run build -- --scope='{marketing,shared}'",
     "test": "lerna run test --parallel",
     "test:watch": "lerna run test:watch --parallel",
     "test:coverage": "lerna run test:coverage",

@@ -1,21 +1,65 @@
-# Getting Start
+# Introduction
 
-1. Local Hasura all set up with docker etc.
-2. GraphQL Code Generator
-3. Move over more common use components
-4. Dark / light mode defaults
-5. Apollo setup
-6. API tests and stuff
+Next Template is a monorepo to let you get started with developing right away instead of writing boilerplate. The repository comes with 5 packages
 
-Start local postgres instance
+1. `app` - main application logic for your business
+1. `marketing` - marketing focused website 
+1. `shared` - shared components used across the monorepo
+1. `hasura` - managing your hasura database for instant GraphQL endpoints
+1. `generated` - auto-generated types and hooks to access your database
+
+# Getting Started
+
+## Prerequisites
+
+* [Docker](https://docs.docker.com/get-docker/)
+
+* [Node](https://nodejs.org/en/)
+
+If you need the database running:
+
 ```
 docker compose up
 ```
 
+## Step 1: Bootstrap 
+
+```
+npm run bootstrap
+```
+
+## Step 2: Dev Environment
+
+```
+npm run dev
+```
+
+## Step 3: Browser
+
+`app` is running at [localhost:3000](http://localhost:3000)
+
+`marketing` is running at [localhost:4000](http://localhost:4000)
+
+# Customization
+
+
+# Developer Experience
 
 ## ESLint
 
-## [Add a new package](https://github.com/lerna/lerna/tree/main/commands/create#readme)
+## Jest
+
+## Tailwind
+
+## Hasura, GraphQL, & Apollo
+
+## Google Analytics
+
+## Environment Variables
+
+
+
+## [Add a new package]
 
 ```
 lerna create <your-package-name>

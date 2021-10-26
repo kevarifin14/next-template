@@ -3,6 +3,11 @@ import { HeroSection } from 'components/HeroSection';
 import SubscribeSection from 'components/SubscribeSection';
 
 export default function IndexPage() {
+  // Hero Section
+  const heroTitle = 'The Next Template to Build';
+  const heroEmphasizedTitle = 'Anything';
+  const heroDescription = 'Stop writing boilerplate code and start building from day one.';
+
   // Feature Grid Section
   const featureGridTitle = 'All-in-one platform';
   const featureGridDescription = 'Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec.';
@@ -47,7 +52,11 @@ export default function IndexPage() {
 
   return (
     <div>
-      <HeroSection title="Next Templates to Build" emphasizedTitle="Anything" />
+      <HeroSection
+        title={heroTitle}
+        emphasizedTitle={heroEmphasizedTitle}
+        description={heroDescription}
+      />
 
       <FeatureGridSection
         title={featureGridTitle}
