@@ -1,6 +1,11 @@
 # Getting Start
 
-
+1. Local Hasura all set up with docker etc.
+2. GraphQL Code Generator
+3. Move over more common use components
+4. Dark / light mode defaults
+5. Apollo setup
+6. API tests and stuff
 
 Start local postgres instance
 ```

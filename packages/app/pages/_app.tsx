@@ -3,7 +3,7 @@ import { DefaultSeo } from 'next-seo';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import { pageview } from 'shared';
+import { pageview, NotificationsProvider, AppearanceProvider } from 'shared';
 
 import WalletsProvider from 'contexts/wallets';
 
@@ -45,11 +45,15 @@ function App({ Component, pageProps }) {
     <>
       <DefaultSeo {...seoProps} />
 
-      <WalletConnectionProvider>
-        <WalletsProvider>
-          {getLayout(<Component {...pageProps} />)}
-        </WalletsProvider>
-      </WalletConnectionProvider>
+      <AppearanceProvider dark>
+        <WalletConnectionProvider>
+          <WalletsProvider>
+            <NotificationsProvider>
+              {getLayout(<Component {...pageProps} />)}
+            </NotificationsProvider>
+          </WalletsProvider>
+        </WalletConnectionProvider>
+      </AppearanceProvider>
 
     </>
   );

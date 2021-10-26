@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card matches snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="px-6 py-8 rounded-3xl border-2 border-transparent dark:border-dark-light"
+    >
+      this is a card
+    </div>
+  </div>
+</body>
+`;

@@ -4,7 +4,12 @@ const light = {
   DEFAULT: '#FFFFFF',
   ...colors.gray,
 };
-const dark = '#111827';
+const dark = {
+  light: colors.gray[700],
+  DEFAULT: colors.gray[800],
+  dark: colors.gray[900],
+  ...colors.gray,
+};
 
 const primary = {
   light: colors.indigo[500],
@@ -15,7 +20,7 @@ const primary = {
 
 module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false,
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {

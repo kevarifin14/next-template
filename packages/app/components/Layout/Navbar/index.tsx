@@ -1,7 +1,6 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { HiBookOpen, HiUser } from 'react-icons/hi';
-import { Button } from 'shared';
+import { HiMoon, HiSun } from 'react-icons/hi';
+import { useAppearanceContext } from 'shared';
 
 import LogoImage from 'components/LogoImage';
 
@@ -9,23 +8,11 @@ import NavLink from './NavLink';
 import NavMobileMenu from './NavMobileMenu';
 
 export default function Navbar() {
-  const router = useRouter();
-
-  const links = [
-    {
-      href: '/docs',
-      icon: HiBookOpen,
-      title: 'Documentation',
-    },
-    {
-      href: '/signin',
-      icon: HiUser,
-      title: 'Sign In',
-    },
-  ];
+  const { dark, setDark } = useAppearanceContext();
+  const links = [];
 
   return (
-    <div className="px-4 sm:px-6 lg:px-8 py-2 w-full bg-light z-50">
+    <div className="px-4 sm:px-6 lg:px-8 py-2 w-full">
       <div className="mx-auto max-w-7xl relative flex items-center justify-between h-16">
 
         <Link href="/">
@@ -34,7 +21,7 @@ export default function Navbar() {
           </a>
         </Link>
 
-        <div className="hidden md:block space-x-8">
+        <div className="hidden md:flex items-center space-x-8">
 
           {links.map(({ title, href }) => (
             <NavLink href={href}>
@@ -42,9 +29,12 @@ export default function Navbar() {
             </NavLink>
           ))}
 
-          <Button type="primary" onClick={() => router.push('/signin')}>
-            Sign Up
-          </Button>
+          <button
+            onClick={() => setDark(!dark)}
+            className="text-gray-500 hover:text-gray-900 dark:text-white dark:hover:text-primary no-underline font-medium"
+          >
+            {dark ? <HiSun className="h-6 w-6" /> : <HiMoon className="h-6 w-6" />}
+          </button>
 
         </div>
 
