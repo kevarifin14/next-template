@@ -1,10 +1,12 @@
-import { classNames } from 'shared';
+import React from 'react';
+
+import { classNames } from '../../utils/tailwind';
 
 type LogoImageProps = {
   className?: string,
 };
 
-export default function LogoImage({ className }: LogoImageProps) {
+export function LogoImage({ className }: LogoImageProps) {
   return (
     <img
       src="/logo.png"

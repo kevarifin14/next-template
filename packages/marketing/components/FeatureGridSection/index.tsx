@@ -20,7 +20,7 @@ export default function FeatureGridSection({
         </p>
       </div>
       <dl className="mt-12 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4 lg:gap-x-8">
-        {features.map((feature) => <Feature feature={feature} />)}
+        {features.map((feature) => <Feature key={feature.name} feature={feature} />)}
       </dl>
     </Section>
   );

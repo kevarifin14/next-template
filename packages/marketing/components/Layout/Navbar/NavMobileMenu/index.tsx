@@ -1,20 +1,16 @@
 import { Transition } from '@headlessui/react';
-import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
-import { Button } from 'shared';
-
-import LogoImage from 'components/LogoImage';
+import { LogoImage } from 'shared';
 
 import NavButton from './NavButton';
 import NavIconLink from './NavIconLink';
 
 export default function NavMobileMenu({ links }) {
   const [isOpen, setIsOpen] = useState(false);
-  const router = useRouter();
 
   return (
-    <>
+    <div>
 
       <div className="md:hidden">
         <NavButton onClick={() => setIsOpen(true)}>
@@ -34,6 +30,7 @@ export default function NavMobileMenu({ links }) {
       >
         <div className="rounded-lg shadow-lg bg-light dark:bg-dark-light divide-y-2 divide-gray-50">
           <div className="p-6 space-y-6">
+
             <div className="flex items-center justify-between">
 
               <div className="h-8 w-8 relative">
@@ -49,18 +46,12 @@ export default function NavMobileMenu({ links }) {
             </div>
 
             <nav className="space-y-2">
-
               {links.map((props) => <NavIconLink key={props.title} {...props} />)}
-
             </nav>
-
-            <Button type="primary" block onClick={() => router.push('/signin')}>
-              Sign Up
-            </Button>
 
           </div>
         </div>
       </Transition>
-    </>
+    </div>
   );
 }

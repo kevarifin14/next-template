@@ -8,9 +8,7 @@ type SubscribeSectionProps = {
   description?: string,
 };
 
-export default function SubscribeSection({
-  title, description,
-}: SubscribeSectionProps) {
+export default function SubscribeSection({ title, description }: SubscribeSectionProps) {
   return (
     <Section size="7xl">
       <Card className="grid grid-cols-1 gap-8 lg:grid-cols-2 items-center py-8 px-4 lg:px-16 lg:py-24" type="primary">

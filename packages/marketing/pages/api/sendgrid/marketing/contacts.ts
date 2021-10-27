@@ -16,7 +16,6 @@ handler.post(async (req, res, next) => {
       method: 'PUT',
       body: { contacts: [{ email: req.body.email }] },
     });
-
     res.status(200).json(response);
   } catch (e) {
     res.status(400).json({ message: e.message });
@@ -24,3 +23,5 @@ handler.post(async (req, res, next) => {
 
   return next();
 });
+
+export default handler;

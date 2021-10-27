@@ -38,7 +38,7 @@ module.exports = {
     'import/no-extraneous-dependencies': [
       'error', 
       { 
-        devDependencies: ['__tests__/**', '**/test.tsx'], 
+        devDependencies: ['__tests__/**', '**/test.tsx', '**/test.ts'], 
         packageDir: ['../..', '.']
       },
     ],
@@ -73,6 +73,7 @@ module.exports = {
     ],
 
     'import/prefer-default-export': 0,
+    'no-underscore-dangle': ["error", { "allow": ["_getData"] }],
   },
   settings: {
     'import/resolver': {

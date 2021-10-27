@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LogoImage matches snapshot 1`] = `
+<body>
+  <div>
+    <img
+      alt="logo"
+      class="mx-auto w-auto"
+      src="/logo.png"
+    />
+  </div>
+</body>
+`;

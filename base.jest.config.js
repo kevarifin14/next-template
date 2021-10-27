@@ -5,9 +5,11 @@ loadEnvConfig(process.env.PWD);
 module.exports = {
  collectCoverageFrom: [
     '**/*.{js,jsx,ts,tsx}',
-    '!*.js',
+    '!*.{js,ts}',
+    '!**/pages/**',
     '!**/coverage/**',
     '!**/dist/**',
+    '!**/.next/**',
     '!**/lib/index.ts',
   ],
   coverageThreshold: {

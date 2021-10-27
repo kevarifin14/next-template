@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import { HiInbox, HiMoon, HiSun } from 'react-icons/hi';
-import { useAppearanceContext } from 'shared';
-
-import LogoImage from 'components/LogoImage';
+import { useAppearanceContext, LogoImage } from 'shared';
 
 import NavLink from './NavLink';
 import NavMobileMenu from './NavMobileMenu';
@@ -39,7 +37,7 @@ export default function Navbar() {
 
         <div className="hidden md:flex space-x-8">
           {links.map(({ title, href }) => (
-            <NavLink href={href}>
+            <NavLink key={title} href={href}>
               {title}
             </NavLink>
           ))}

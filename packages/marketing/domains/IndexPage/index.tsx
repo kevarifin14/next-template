@@ -5,7 +5,7 @@ import FeatureSideBySideSection from 'components/FeatureSideBySideSection';
 import { HeroSection } from 'components/HeroSection';
 import SubscribeSection from 'components/SubscribeSection';
 
-export default function IndexPage() {
+export function IndexPage() {
   const content = {
     hero: {
       title: 'The Next Template to Build',

@@ -26,7 +26,7 @@ export default function FeatureSideBySideSection({
         </p>
 
         <dl className="mt-10 space-y-10">
-          {features.map((feature) => <Feature feature={feature} />)}
+          {features.map((feature) => <Feature key={feature.name} feature={feature} />)}
         </dl>
 
       </div>

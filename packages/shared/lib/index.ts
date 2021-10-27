@@ -7,6 +7,7 @@ export * from './components/Icon';
 export * from './components/Input';
 export * from './components/Card';
 export * from './components/TextArea';
+export * from './components/LogoImage';
 
 export * from './contexts/appearance';
 export * from './contexts/notifications';

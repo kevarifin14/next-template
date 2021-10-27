@@ -6,6 +6,10 @@
     "dev": "next dev --port 4000",
     "build": "next build",
     "start": "next start",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:updateSnapshot": "jest --updateSnapshot",
+    "test:coverage": "jest --coverage && :",
     "lint-staged": "lint-staged"
   },
   "dependencies": {
@@ -24,7 +28,8 @@
   },
   "lint-staged": {
     "**/*.[jt]s?(x)": [
-      "eslint --fix"
+      "eslint --fix",
+      "npm run test:coverage"
     ]
   }
 }

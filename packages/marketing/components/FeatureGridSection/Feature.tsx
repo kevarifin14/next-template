@@ -5,7 +5,11 @@ export type IFeature = {
   description: string,
 };
 
-export default function Feature({ feature }) {
+type FeatureProps = {
+  feature: IFeature
+};
+
+export default function Feature({ feature }: FeatureProps) {
   return (
     <div key={feature.name} className="relative">
       <dt className="flex space-x-2">

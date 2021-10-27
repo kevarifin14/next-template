@@ -14,7 +14,7 @@ const footerNavigation = {
       icon: (props) => <FaTwitter {...props} />,
     },
     {
-      name: 'Twitter',
+      name: 'Mail',
       href: 'mailto:kevin@notionql.com',
       icon: (props) => <HiMail {...props} />,
     },

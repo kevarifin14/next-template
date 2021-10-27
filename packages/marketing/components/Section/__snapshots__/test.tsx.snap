@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Section matches snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="py-8 px-4 lg:py-12 lg:px-6 w-full prose dark:prose-light mx-auto max-w-none"
+    >
+      mock
+    </div>
+  </div>
+</body>
+`;
