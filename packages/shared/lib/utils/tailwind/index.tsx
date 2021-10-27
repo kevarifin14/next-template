@@ -1,6 +1,6 @@
 import { ComponentProps } from 'react';
 
-export type TailwindSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
+export type TailwindSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl';
 
 export const classNames = (...classes) => classes.filter(Boolean).join(' ');
 

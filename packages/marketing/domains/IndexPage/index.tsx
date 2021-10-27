@@ -1,73 +1,92 @@
+import { HiOutlineDesktopComputer, HiOutlineGlobe, HiOutlineLightningBolt } from 'react-icons/hi';
+
 import FeatureGridSection from 'components/FeatureGridSection';
+import FeatureSideBySideSection from 'components/FeatureSideBySideSection';
 import { HeroSection } from 'components/HeroSection';
 import SubscribeSection from 'components/SubscribeSection';
 
 export default function IndexPage() {
-  // Hero Section
-  const heroTitle = 'The Next Template to Build';
-  const heroEmphasizedTitle = 'Anything';
-  const heroDescription = 'Stop writing boilerplate code and start building from day one.';
-
-  // Feature Grid Section
-  const featureGridTitle = 'All-in-one platform';
-  const featureGridDescription = 'Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec.';
-  const features = [
-    {
-      name: 'Invite team members',
-      description: 'Tempor tellus in aliquet eu et sit nulla tellus. Suspendisse est, molestie blandit quis ac. Lacus.',
+  const content = {
+    hero: {
+      title: 'The Next Template to Build',
+      emphasizedTitle: 'Anything',
+      description: 'Stop writing boilerplate code and start building from day one.',
+      withSubscribeForm: true,
     },
-    {
-      name: 'Notifications',
-      description: 'Ornare donec rhoncus vitae nisl velit, neque, mauris dictum duis. Nibh urna non parturient.',
+    featureSideBySide: {
+      title: 'Everything out of the box',
+      description: 'A landing page, application, and design system.',
+      features: [
+        {
+          name: 'Marketing',
+          description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+          icon: HiOutlineGlobe,
+        },
+        {
+          name: 'Application',
+          description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+          icon: HiOutlineDesktopComputer,
+        },
+        {
+          name: 'Design System',
+          description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+          icon: HiOutlineLightningBolt,
+        },
+      ],
+      src: 'https://tailwindui.com/img/features/feature-example-2.png',
+      reverse: true,
     },
-    {
-      name: 'List view',
-      description: 'Etiam cras augue ornare pretium sit malesuada morbi orci, venenatis. Dictum lacus.',
+    featureGrid: {
+      title: 'All-in-one platform',
+      description: 'Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec.',
+      features: [
+        {
+          name: 'Invite team members',
+          description: 'Tempor tellus in aliquet eu et sit nulla tellus. Suspendisse est, molestie blandit quis ac. Lacus.',
+        },
+        {
+          name: 'Notifications',
+          description: 'Ornare donec rhoncus vitae nisl velit, neque, mauris dictum duis. Nibh urna non parturient.',
+        },
+        {
+          name: 'List view',
+          description: 'Etiam cras augue ornare pretium sit malesuada morbi orci, venenatis. Dictum lacus.',
+        },
+        {
+          name: 'Boards',
+          description: 'Interdum quam pulvinar turpis tortor, egestas quis diam amet, natoque. Mauris sagittis.',
+        },
+        {
+          name: 'Keyboard shortcuts',
+          description: 'Ullamcorper in ipsum ac feugiat. Senectus at aliquam vulputate mollis nec. In at risus odio.',
+        },
+        {
+          name: 'Reporting',
+          description: 'Magna a vel sagittis aliquam eu amet. Et lorem auctor quam nunc odio. Sed bibendum.',
+        },
+        {
+          name: 'Calendars',
+          description: 'Sed mi, dapibus turpis orci posuere integer. A porta viverra posuere adipiscing turpis.',
+        },
+        {
+          name: 'Mobile app',
+          description: 'Quisque sapien nunc nisl eros. Facilisis sagittis maecenas id dignissim tristique proin sed.',
+        },
+      ],
     },
-    {
-      name: 'Boards',
-      description: 'Interdum quam pulvinar turpis tortor, egestas quis diam amet, natoque. Mauris sagittis.',
+    subscribe: {
+      title: 'Want product news and updates?',
+      description: 'Sign up for our newsletter to stay up to date.',
     },
-    {
-      name: 'Keyboard shortcuts',
-      description: 'Ullamcorper in ipsum ac feugiat. Senectus at aliquam vulputate mollis nec. In at risus odio.',
-    },
-    {
-      name: 'Reporting',
-      description: 'Magna a vel sagittis aliquam eu amet. Et lorem auctor quam nunc odio. Sed bibendum.',
-    },
-    {
-      name: 'Calendars',
-      description: 'Sed mi, dapibus turpis orci posuere integer. A porta viverra posuere adipiscing turpis.',
-    },
-    {
-      name: 'Mobile app',
-      description: 'Quisque sapien nunc nisl eros. Facilisis sagittis maecenas id dignissim tristique proin sed.',
-    },
-  ];
-
-  // Subscribe Section
-  const subscribeTitle = 'Want product news and updates?';
-  const subscribeDescription = 'Sign up for our newsletter to stay up to date.';
+  };
 
   return (
     <div>
-      <HeroSection
-        title={heroTitle}
-        emphasizedTitle={heroEmphasizedTitle}
-        description={heroDescription}
-      />
-
-      <FeatureGridSection
-        title={featureGridTitle}
-        description={featureGridDescription}
-        features={features}
-      />
-
-      <SubscribeSection
-        title={subscribeTitle}
-        description={subscribeDescription}
-      />
+      <HeroSection {...content.hero} />
+      <FeatureSideBySideSection {...content.featureSideBySide} />
+      <FeatureSideBySideSection {...content.featureSideBySide} reverse={false} />
+      <FeatureGridSection {...content.featureGrid} />
+      <SubscribeSection {...content.subscribe} />
     </div>
   );
 }

@@ -26,7 +26,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>((
   const primaryClassName = classNames(
     'text-white',
     gradient
-      ? 'bg-gradient-to-tr from-primary-500 to-primary-900'
+      ? 'bg-gradient-to-tr from-primary-500 to-primary-800'
       : 'bg-primary border-primary hover:bg-primary-dark hover:border-primary-dark border',
   );
   const secondaryClassName = 'dark:text-primary dark:bg-transparent dark:border-primary text-primary-dark bg-primary-100 border-primary-100 hover:bg-primary-200 hover:border-primary-200 border';

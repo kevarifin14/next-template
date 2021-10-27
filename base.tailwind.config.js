@@ -2,6 +2,7 @@ const colors = require('tailwindcss/colors');
 
 const light = {
   DEFAULT: colors.white,
+  dark: colors.gray[100],
   ...colors.gray,
 };
 const dark = {
@@ -11,7 +12,7 @@ const dark = {
   ...colors.gray,
 };
 
-const primaryColor = colors.sky;
+const primaryColor = colors.emerald;
 const primary = {
   light: primaryColor[500],
   DEFAULT: primaryColor[600],

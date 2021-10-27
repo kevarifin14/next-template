@@ -19,8 +19,8 @@ function App({ Component, pageProps }) {
     };
   }, [router.events]);
 
-  const title = 'title';
-  const description = 'description';
+  const title = 'Next Template';
+  const description = 'The Next Template to Build Anything';
 
   const seoProps = {
     title,
@@ -28,7 +28,6 @@ function App({ Component, pageProps }) {
     openGraph: {
       title,
       description,
-
     },
   };
 

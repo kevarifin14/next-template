@@ -1,5 +1,6 @@
 import { Card } from 'shared';
 
+import Section from 'components/Section';
 import SubscribeForm from 'components/SubscribeForm';
 
 type SubscribeSectionProps = {
@@ -11,16 +12,21 @@ export default function SubscribeSection({
   title, description,
 }: SubscribeSectionProps) {
   return (
-    <Card className="max-w-7xl mx-4 xl:mx-auto my-16 grid space-y-8 lg:space-y-0 lg:grid-cols-2 py-24 px-16 items-center" type="primary">
-      <div className="">
-        <h2 className="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
-          {title}
-        </h2>
-        <p className="mt-3 max-w-3xl text-lg leading-6 text-primary-200">
-          {description}
-        </p>
-      </div>
-      <SubscribeForm size="lg" />
-    </Card>
+    <Section size="7xl">
+      <Card className="grid grid-cols-1 gap-8 lg:grid-cols-2 items-center py-8 px-4 lg:px-16 lg:py-24" type="primary">
+
+        <div className="space-y-2">
+          <h1 className="text-white text-2xl font-extrabold m-0">
+            {title}
+          </h1>
+          <p className="text-gray-200 m-0">
+            {description}
+          </p>
+        </div>
+
+        <SubscribeForm size="lg" />
+
+      </Card>
+    </Section>
   );
 }

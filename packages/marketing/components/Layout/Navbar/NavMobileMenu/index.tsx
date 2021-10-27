@@ -32,8 +32,8 @@ export default function NavMobileMenu({ links }) {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        <div className="rounded-lg shadow-lg bg-light divide-y-2 divide-gray-50">
-          <div className="pt-5 pb-6 px-5 sm:pb-8">
+        <div className="rounded-lg shadow-lg bg-light dark:bg-dark-light divide-y-2 divide-gray-50">
+          <div className="p-6 space-y-6">
             <div className="flex items-center justify-between">
 
               <div className="h-8 w-8 relative">
@@ -48,17 +48,15 @@ export default function NavMobileMenu({ links }) {
 
             </div>
 
-            <div className="mt-6 sm:mt-8">
-              <nav className="space-y-2">
+            <nav className="space-y-2">
 
-                {links.map((props) => <NavIconLink key={props.title} {...props} />)}
+              {links.map((props) => <NavIconLink key={props.title} {...props} />)}
 
-                <Button type="primary" block onClick={() => router.push('/signin')}>
-                  Sign Up
-                </Button>
+            </nav>
 
-              </nav>
-            </div>
+            <Button type="primary" block onClick={() => router.push('/signin')}>
+              Sign Up
+            </Button>
 
           </div>
         </div>

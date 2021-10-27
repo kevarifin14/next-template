@@ -62,7 +62,7 @@ describe('Button', () => {
 
   it('makes the button primary gradient', () => {
     const button = renderButton({ type: 'primary', gradient: true });
-    expect(button).toHaveClass('bg-gradient-to-tr from-primary-500 to-primary-900 text-white');
+    expect(button).toHaveClass('bg-gradient-to-tr from-primary-500 to-primary-800 text-white');
   });
 
   it('makes the button secondary', () => {
