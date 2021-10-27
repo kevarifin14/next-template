@@ -26,8 +26,8 @@ export default function Navbar() {
   ];
 
   return (
-    <div className="px-4 sm:px-6 lg:px-8 py-2 w-full">
-      <div className="mx-auto max-w-7xl relative flex items-center justify-between h-16">
+    <div className="px-4 sm:px-6 lg:px-8 py-2">
+      <div className="mx-auto relative flex items-center justify-between h-16 max-w-7xl w-full">
 
         <Link href="/">
           <a>
@@ -35,7 +35,7 @@ export default function Navbar() {
           </a>
         </Link>
 
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex justify-center space-x-8 flex-1">
           {links.map(({ title, href }) => (
             <NavLink key={title} href={href}>
               {title}
@@ -43,7 +43,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center justify-end space-x-8">
 
           <button
             onClick={() => setDark(!dark)}

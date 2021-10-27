@@ -10,10 +10,10 @@ exports[`Navbar matches snapshot 1`] = `
         class="transform transition-colors h-full bg-light dark:bg-dark"
       >
         <div
-          class="px-4 sm:px-6 lg:px-8 py-2 w-full"
+          class="px-4 sm:px-6 lg:px-8 py-2"
         >
           <div
-            class="mx-auto max-w-7xl relative flex items-center justify-between h-16"
+            class="mx-auto relative flex items-center justify-between h-16 max-w-7xl w-full"
           >
             <a
               href="/"
@@ -25,7 +25,7 @@ exports[`Navbar matches snapshot 1`] = `
               />
             </a>
             <div
-              class="hidden md:flex space-x-8"
+              class="hidden md:flex justify-center space-x-8 flex-1"
             >
               <a
                 class="text-gray-500 hover:text-gray-900 dark:text-white dark:hover:text-primary no-underline font-medium"
@@ -47,7 +47,7 @@ exports[`Navbar matches snapshot 1`] = `
               </a>
             </div>
             <div
-              class="hidden md:flex items-center space-x-8"
+              class="hidden md:flex items-center justify-end space-x-8"
             >
               <button
                 class="text-gray-500 hover:text-gray-900 dark:text-white dark:hover:text-primary no-underline font-medium"
