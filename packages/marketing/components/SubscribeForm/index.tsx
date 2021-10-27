@@ -11,7 +11,7 @@ type SubscribeFormProps = {
 };
 
 export default function SubscribeForm({ size, className, cta = 'Get Early Access' }: SubscribeFormProps) {
-  const { addErrorNotification } = useNotifications();
+  const { addErrorNotification, addSuccessNotification } = useNotifications();
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [loading, setLoading] = useState(false);
 
@@ -19,6 +19,7 @@ export default function SubscribeForm({ size, className, cta = 'Get Early Access
     setLoading(true);
     try {
       await post('/api/sendgrid/marketing/contacts', { email });
+      addSuccessNotification({ title: 'Thanks for subscribing!' });
     } catch (e) {
       addErrorNotification({ title: 'There was a problem', description: e.message });
     }
@@ -26,7 +27,7 @@ export default function SubscribeForm({ size, className, cta = 'Get Early Access
   };
 
   const subscribeFormClassName = classNames(
-    'flex space-x-4',
+    'flex flex-col space-y-2 space-x-0 sm:space-x-4 sm:space-y-0 sm:flex-row',
     className,
   );
 
@@ -42,12 +43,11 @@ export default function SubscribeForm({ size, className, cta = 'Get Early Access
         />
 
         <div className="flex-shrink-0">
-          <Button type="primary" gradient size={size} htmlType="submit" loading={loading}>
+          <Button className="w-full" type="primary" gradient size={size} htmlType="submit" loading={loading}>
             {cta}
           </Button>
         </div>
       </form>
-      {/* <p>{message}</p> */}
     </>
   );
 }

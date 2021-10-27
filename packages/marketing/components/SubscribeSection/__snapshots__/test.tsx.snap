@@ -23,7 +23,7 @@ exports[`SubscribeSection matches snapshot 1`] = `
           />
         </div>
         <form
-          class="flex space-x-4"
+          class="flex flex-col space-y-2 space-x-0 sm:space-x-4 sm:space-y-0 sm:flex-row"
         >
           <div
             class="w-full"
@@ -44,7 +44,7 @@ exports[`SubscribeSection matches snapshot 1`] = `
             class="flex-shrink-0"
           >
             <button
-              class="inline-flex items-center justify-center focus:outline-none font-medium rounded-md text-white bg-gradient-to-tr from-primary-500 to-primary-800    px-5 py-3 text-lg "
+              class="inline-flex items-center justify-center focus:outline-none font-medium rounded-md text-white bg-gradient-to-tr from-primary-500 to-primary-800    px-5 py-3 text-lg w-full"
               type="submit"
             >
               Get Early Access
