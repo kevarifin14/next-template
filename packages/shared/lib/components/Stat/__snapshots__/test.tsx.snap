@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stat matches snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="prose dark:prose-invert"
+    >
+      <p
+        class="m-0 text-sm font-medium truncate"
+      />
+      <h2
+        class="mt-1 text-3xl font-semibold"
+      />
+    </div>
+  </div>
+</body>
+`;

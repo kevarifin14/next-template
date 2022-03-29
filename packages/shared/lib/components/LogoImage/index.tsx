@@ -1,17 +1,17 @@
-import React from 'react';
-
-import { classNames } from '../../utils/tailwind';
+import { classNames } from "../../utils/tailwind";
+import React from "react";
 
 type LogoImageProps = {
-  className?: string,
+  className?: string;
+  dark: boolean;
 };
 
-export function LogoImage({ className }: LogoImageProps) {
+export function LogoImage({ className, dark }: LogoImageProps) {
   return (
     <img
-      src="/logo.png"
+      src={dark ? "/logo-light.svg" : "/logo-dark.svg"}
       alt="logo"
-      className={classNames('mx-auto', 'w-auto', className)}
+      className={classNames("mx-auto", "w-auto", className)}
     />
   );
 }

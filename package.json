@@ -2,28 +2,28 @@
   "name": "next-template",
   "version": "0.1.0",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "bootstrap": "npm i; lerna bootstrap --hoist",
-    "dev": "lerna run dev --parallel --no-bail",
-    "start": "lerna run start --parallel",
-    "build": "npm run bootstrap; lerna run build --stream",
-    "build:app": "npm run build -- --scope='{app,shared}'",
-    "build:marketing": "npm run build -- --scope='{marketing,shared}'",
-    "test": "lerna run test --parallel",
-    "test:watch": "lerna run test:watch --parallel",
-    "test:coverage": "lerna run test:coverage",
-    "test:updateSnapshot": "lerna run test:updateSnapshot",
-    "create": "lerna create",
-    "add": "lerna add",
-    "clean": "lerna clean; rm -rf */**/package-lock.json */**/dist */**/.next; rm -rf node_modules package-lock.json;",
+    "build": "turbo run build --scope=\"@underdog-protocol/app\" --include-dependencies",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "dx": "turbo run dx",
+    "db-console": "yarn workspace @next-template/hasura db-console",
+    "down": "turbo run down",
+    "generate": "graphql-codegen --config codegen.yml",
+    "start": "turbo run start --scope=\"@underdog-protocol/app\"",
+    "heroku-postbuild": "npm run build -- --scope='{shared,generated,backend,worker}'",
     "prepare": "husky install",
-    "lint-staged": "lerna run lint-staged --stream --concurrency 1"
+    "pre-commit": "lint-staged"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^2.2.1",
     "@graphql-codegen/typescript": "^2.2.4",
     "@graphql-codegen/typescript-operations": "^2.1.8",
     "@graphql-codegen/typescript-react-apollo": "^3.1.6",
+    "@tailwindcss/typography": "^0.5.2",
     "@testing-library/dom": "^8.10.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.2",
@@ -49,14 +49,19 @@
     "microbundle": "^0.14.1",
     "next-transpile-modules": "^8.0.0",
     "node-mocks-http": "^1.11.0",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.2.15",
-    "tailwindcss": "^2.1.2",
+    "tailwindcss": "^3.0.23",
     "typescript": "^4.2.4"
   },
+  "packageManager": "yarn@1.22.17",
   "dependencies": {
-    "app": "file:packages/app",
-    "generated": "file:packages/generated",
-    "marketing": "file:packages/marketing",
-    "shared": "file:packages/shared"
+    "turbo": "^1.1.10"
+  },
+  "lint-staged": {
+    "{apps,packages}/**/*.{js,ts,jsx,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   }
 }

@@ -4,7 +4,7 @@ exports[`Spin matches snapshot 1`] = `
 <body>
   <div>
     <svg
-      class="animate-spin h-5 w-5 text-gray-400"
+      class="animate-spin h-5 w-5 text-gray-400 h-6 w-6"
       fill="none"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"

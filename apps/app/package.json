@@ -1,0 +1,36 @@
+{
+  "name": "@next-template/app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .next",
+    "dev": "next dev",
+    "dx": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint-staged": "lint-staged"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.4.1",
+    "@next-template/config": "*",
+    "@next-template/shared": "*",
+    "@next-template/tsconfig": "*",
+    "@solana/wallet-adapter-base": "^0.9.5",
+    "@solana/wallet-adapter-react": "^0.15.4",
+    "@solana/wallet-adapter-react-ui": "^0.9.6",
+    "@solana/wallet-adapter-wallets": "^0.15.5",
+    "@solana/web3.js": "^1.29.2",
+    "next": "^12.1.2",
+    "next-connect": "^0.12.2",
+    "next-seo": "^4.26.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-icons": "^4.3.1",
+    "uuid": "^8.3.2"
+  },
+  "lint-staged": {
+    "**/*.[jt]s?(x)": [
+      "eslint --fix"
+    ]
+  }
+}

@@ -1,7 +1,12 @@
 {
-  "name": "hasura",
+  "name": "@next-template/hasura",
   "version": "0.0.0",
   "scripts": {
+    "dx": "yarn db-setup",
+    "db-console": "hasura console --no-browser",
+    "db-setup": "run-s db-up db-deploy",
+    "db-deploy": "hasura migrate apply --database-name=default; hasura metadata apply",
+    "db-up": "docker compose up -d",
     "dev": "hasura console --no-browser"
   },
   "dependencies": {

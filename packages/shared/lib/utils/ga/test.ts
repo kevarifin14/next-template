@@ -1,34 +1,52 @@
-import { pageview, event } from '.';
+import { pageview, event } from ".";
 
-describe('Google Analytics', () => {
+describe("Google Analytics", () => {
   const mockGtag = jest.fn();
-  window.gtag = mockGtag;
 
-  const mockUrl = 'https://mock.com';
-  const mockAction = 'login';
-  const mockParams = { email: 'mock@gmail.com' };
+  const mockUrl = "https://mock.com";
+  const mockCategory = "login";
+  const mockAction = "action";
+  const mockLabel = "label";
+  const mockEmail = "mock@gmail.com";
+  const mockParams = {
+    event_category: mockCategory,
+    event_label: mockLabel,
+    email: mockEmail,
+  };
 
-  describe('pageview', () => {
-    it('triggers gtag config', () => {
-      pageview(mockUrl);
-
-      expect(mockGtag).toHaveBeenCalledWith(
-        'config',
-        'TEST_GOOGLE_ANALYTICS_TRACKING_ID',
-        { page_path: mockUrl },
-      );
+  describe("window ready", () => {
+    beforeEach(() => {
+      window.gtag = mockGtag;
+      jest.clearAllMocks();
     });
-  });
 
-  describe('event', () => {
-    it('triggers gtag event', () => {
-      event({ action: mockAction, params: mockParams });
+    describe("pageview", () => {
+      it("triggers gtag config", () => {
+        pageview(mockUrl);
 
-      expect(mockGtag).toHaveBeenCalledWith(
-        'event',
-        mockAction,
-        mockParams,
-      );
+        expect(mockGtag).toHaveBeenCalledWith(
+          "config",
+          "TEST_GOOGLE_ANALYTICS",
+          { page_path: mockUrl }
+        );
+      });
+    });
+
+    describe("event", () => {
+      it("triggers gtag event", () => {
+        event(mockCategory, mockAction, mockLabel, { email: mockEmail });
+
+        expect(mockGtag).toHaveBeenCalledWith("event", mockAction, mockParams);
+      });
+
+      it("triggers gtag event", () => {
+        event(mockCategory, mockAction);
+
+        expect(mockGtag).toHaveBeenCalledWith("event", mockAction, {
+          event_category: "login",
+          event_label: "",
+        });
+      });
     });
   });
 });

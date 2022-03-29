@@ -1,9 +1,27 @@
 export const pageview = (url) => {
-  window.gtag('config', process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_TRACKING_ID, {
+  window.gtag("config", process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS, {
     page_path: url,
   });
 };
 
-export const event = ({ action, params }) => {
-  window.gtag('event', action, params);
+type EventCategory =
+  | "lead"
+  | "outbound link"
+  | "call to action"
+  | "login"
+  | "swap";
+
+export const event = (
+  category: EventCategory,
+  action,
+  label = "",
+  params = {}
+) => {
+  if (process.env.NODE_ENV === "production") {
+    window.gtag("event", action, {
+      event_category: category,
+      event_label: label,
+      ...params,
+    });
+  }
 };

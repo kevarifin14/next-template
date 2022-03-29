@@ -4,7 +4,7 @@ exports[`Button matches snapshot 1`] = `
 <body>
   <div>
     <button
-      class="inline-flex items-center justify-center focus:outline-none font-medium rounded-md text-white bg-primary border-primary hover:bg-primary-dark hover:border-primary-dark border    px-4 py-2 "
+      class="inline-flex items-center justify-center focus:outline-none font-medium rounded-md text-white bg-primary border-primary hover:bg-primary-dark hover:border-primary-dark border     px-4 py-2 "
       type="button"
     >
       Click

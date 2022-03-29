@@ -10,7 +10,7 @@ exports[`MediaObject matches snapshot 1`] = `
         class="flex-shrink-0"
       >
         <div
-          class="relative rounded-full overflow-hidden flex items-center text-md h-10 w-10"
+          class="relative rounded-full overflow-hidden flex items-center flex-shrink-0 h-10 w-10"
         >
           <img
             alt="mockSrc"
