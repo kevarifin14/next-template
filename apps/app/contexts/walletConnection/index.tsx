@@ -14,15 +14,12 @@ import { clusterApiUrl } from "@solana/web3.js";
 import { useMemo } from "react";
 
 export default function WalletConnectionProvider({ children }) {
-  const network = WalletAdapterNetwork.Mainnet;
+  const network =
+    process.env.NODE_ENV === "development"
+      ? WalletAdapterNetwork.Devnet
+      : WalletAdapterNetwork.Mainnet;
 
-  const endpoint = useMemo(
-    () =>
-      process.env.NODE_ENV === "development"
-        ? clusterApiUrl(WalletAdapterNetwork.Devnet)
-        : clusterApiUrl(WalletAdapterNetwork.Mainnet),
-    [network]
-  );
+  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 
   const wallets = useMemo(
     () => [
